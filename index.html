@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>E-WASTE: Operación Zero</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<div class="game">
+
+    <!-- ============================= -->
+    <!-- PANTALLA PRINCIPAL -->
+    <!-- ============================= -->
+
+    <section id="menu" class="screen">
+
+        <div class="logo">
+            ⚡♻️
+        </div>
+
+        <h1>E-WASTE</h1>
+
+        <h2>OPERACIÓN ZERO</h2>
+
+        <p class="historia">
+
+            La ciudad está colapsando por la
+            basura electrónica.
+
+            <br><br>
+
+            Tu misión es recuperar dispositivos,
+            evitar residuos peligrosos y
+            convertirte en el mejor EcoAgente.
+
+        </p>
+
+        <button id="startButton">
+            🚀 INICIAR MISIÓN
+        </button>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- SELECCIÓN DE NIVEL -->
+    <!-- ============================= -->
+
+    <section id="niveles"
+             class="screen hidden">
+
+        <h1>SELECCIONA TU MISIÓN</h1>
+
+        <div class="levels">
+
+            <button class="level"
+                    data-level="1">
+
+                🌆
+
+                <strong>NIVEL 1</strong>
+
+                <small>
+                    Limpia las calles
+                </small>
+
+            </button>
+
+
+            <button class="level locked"
+                    data-level="2">
+
+                📱
+
+                <strong>NIVEL 2</strong>
+
+                <small>
+                    Rescata dispositivos
+                </small>
+
+            </button>
+
+
+            <button class="level locked"
+                    data-level="3">
+
+                🔋
+
+                <strong>NIVEL 3</strong>
+
+                <small>
+                    Zona de baterías
+                </small>
+
+            </button>
+
+
+            <button class="level locked"
+                    data-level="4">
+
+                💻
+
+                <strong>NIVEL 4</strong>
+
+                <small>
+                    Caos tecnológico
+                </small>
+
+            </button>
+
+
+            <button class="level locked"
+                    data-level="5">
+
+                ☢️
+
+                <strong>NIVEL 5</strong>
+
+                <small>
+                    Operación Zero
+                </small>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- JUEGO -->
+    <!-- ============================= -->
+
+    <section id="gameScreen"
+             class="screen hidden">
+
+        <div class="topBar">
+
+            <div>
+                🏆
+                <span id="score">0</span>
+            </div>
+
+            <div>
+                ❤️
+                <span id="lives">3</span>
+            </div>
+
+            <div>
+                ⏱️
+                <span id="time">30</span>
+            </div>
+
+            <div>
+                NIVEL
+                <span id="levelNumber">1</span>
+            </div>
+
+        </div>
+
+
+        <div class="progress">
+
+            <div id="progressBar"></div>
+
+        </div>
+
+
+        <div id="gameArea">
+
+            <div id="player">
+
+                🧑‍💻
+
+            </div>
+
+        </div>
+
+
+        <div class="controls">
+
+            <button id="leftButton">
+                ◀
+            </button>
+
+            <button id="rightButton">
+                ▶
+            </button>
+
+        </div>
+
+
+        <div id="message">
+
+            ¡Comienza la misión!
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- NIVEL COMPLETADO -->
+    <!-- ============================= -->
+
+    <section id="levelComplete"
+             class="screen hidden">
+
+        <div class="bigEmoji">
+            🔥
+        </div>
+
+        <h1>
+            ¡NIVEL COMPLETADO!
+        </h1>
+
+        <p>
+            Has demostrado que eres
+            un verdadero EcoAgente.
+        </p>
+
+        <div id="levelScore">
+            +100 XP
+        </div>
+
+        <button id="nextLevel">
+            🚀 SIGUIENTE NIVEL
+        </button>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- GAME OVER -->
+    <!-- ============================= -->
+
+    <section id="gameOver"
+             class="screen hidden">
+
+        <div class="bigEmoji">
+            💀
+        </div>
+
+        <h1>
+            MISIÓN FALLIDA
+        </h1>
+
+        <p>
+            La basura electrónica
+            ganó esta batalla...
+        </p>
+
+        <div id="finalScore">
+            0
+        </div>
+
+        <button id="retry">
+            🔄 INTENTAR DE NUEVO
+        </button>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- VICTORIA -->
+    <!-- ============================= -->
+
+    <section id="victory"
+             class="screen hidden">
+
+        <div class="bigEmoji">
+            🏆
+        </div>
+
+        <h1>
+            ¡OPERACIÓN ZERO COMPLETADA!
+        </h1>
+
+        <p>
+            ¡Has salvado la ciudad
+            de la basura electrónica!
+        </p>
+
+        <div id="victoryScore">
+            0
+        </div>
+
+        <button id="restart">
+            🔥 JUGAR DE NUEVO
+        </button>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

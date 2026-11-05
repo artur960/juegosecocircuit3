@@ -1,0 +1,448 @@
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at top,
+            #16213e,
+            #050505
+        );
+
+    color: white;
+
+}
+
+
+.game {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.screen {
+
+    width: 100%;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+
+        rgba(
+            20,
+            25,
+            40,
+            0.95
+        );
+
+    border:
+
+        2px solid
+        #00ffc8;
+
+    box-shadow:
+
+        0 0 30px
+        rgba(
+            0,
+            255,
+            200,
+            0.2
+        );
+
+}
+
+
+.logo {
+
+    font-size: 90px;
+
+}
+
+
+h1 {
+
+    margin: 5px;
+
+    font-size: 38px;
+
+    letter-spacing: 3px;
+
+    color: #00ffc8;
+
+}
+
+
+h2 {
+
+    color: #ffcc00;
+
+    letter-spacing: 2px;
+
+}
+
+
+.historia {
+
+    line-height: 1.6;
+
+    color: #dddddd;
+
+}
+
+
+button {
+
+    width: 100%;
+
+    padding: 16px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #00b894,
+            #00cec9
+        );
+
+    cursor: pointer;
+
+}
+
+
+button:active {
+
+    transform:
+        scale(0.95);
+
+}
+
+
+/* NIVELES */
+
+.levels {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.level {
+
+    display: grid;
+
+    grid-template-columns:
+        60px 1fr;
+
+    grid-template-rows:
+        1fr 1fr;
+
+    align-items: center;
+
+    text-align: left;
+
+    font-size: 30px;
+
+}
+
+
+.level strong {
+
+    font-size: 18px;
+
+}
+
+
+.level small {
+
+    font-size: 13px;
+
+    color: #cccccc;
+
+}
+
+
+.locked {
+
+    opacity: 0.45;
+
+}
+
+
+/* BARRA SUPERIOR */
+
+.topBar {
+
+    display: flex;
+
+    gap: 7px;
+
+    justify-content: space-between;
+
+}
+
+
+.topBar div {
+
+    flex: 1;
+
+    padding: 10px 5px;
+
+    border-radius: 10px;
+
+    background:
+        #111827;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.topBar span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #00ffc8;
+
+}
+
+
+/* PROGRESO */
+
+.progress {
+
+    height: 10px;
+
+    margin: 12px 0;
+
+    background: #333;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+#progressBar {
+
+    height: 100%;
+
+    width: 100%;
+
+    background:
+        #00ffc8;
+
+    transition:
+        width 1s linear;
+
+}
+
+
+/* ÁREA DEL JUEGO */
+
+#gameArea {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 60vh;
+
+    min-height: 400px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    border:
+        2px solid #00ffc8;
+
+    background:
+
+        linear-gradient(
+            #07111f,
+            #102a43
+        );
+
+}
+
+
+/* ESTRELLAS */
+
+#gameArea::before {
+
+    content: "✦     ·       ✦       ·     ✦";
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 0;
+
+    width: 100%;
+
+    font-size: 25px;
+
+    color: #ffffff;
+
+    opacity: 0.3;
+
+}
+
+
+/* JUGADOR */
+
+#player {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 50px;
+
+    z-index: 10;
+
+}
+
+
+/* OBJETOS */
+
+.item {
+
+    position: absolute;
+
+    font-size: 40px;
+
+    z-index: 5;
+
+}
+
+
+/* CONTROLES */
+
+.controls {
+
+    display: flex;
+
+    gap: 15px;
+
+}
+
+
+.controls button {
+
+    font-size: 30px;
+
+    background:
+        #172554;
+
+    border:
+        2px solid #00ffc8;
+
+}
+
+
+/* MENSAJE */
+
+#message {
+
+    min-height: 30px;
+
+    margin-top: 10px;
+
+    color: #00ffc8;
+
+    font-weight: bold;
+
+}
+
+
+/* RESULTADOS */
+
+.bigEmoji {
+
+    font-size: 90px;
+
+}
+
+
+#levelScore,
+#finalScore,
+#victoryScore {
+
+    margin: 20px;
+
+    font-size: 55px;
+
+    color: #ffcc00;
+
+    font-weight: bold;
+
+}
+
+
+.hidden {
+
+    display: none;
+
+}
